@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>WebRTC client</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- formulario inicial-->    
+<div id="id01" class="modal">
+  <div class="modal-content animate">
+    <div class="imgcontainer">
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label><b>Nombre de usuario</b></label>
+      <input type="text" placeholder="Nombre de usuario" id="uname" required>
+
+      <label><b>Sala</b></label>
+      <input type="text" placeholder="Sala" id="channel" required>
+        
+      <button type="submit" onclick="funcionEntrar()">Entrar</button>
+    </div>
+  </div>
+</div>
+    
+<!-- Menú lateral -->
+<div class="menu">
+    <ul class="users">
+        <li class="room" id="roomName"></li>
+        <li class="user">Usuario 1</li>
+        <li class="user">Usuario 2</li>
+        <li class="user">Usuario 3</li>
+        <li class="user">Usuario 4</li>
+    </ul>
+    <div class="files">
+        <li class="room" id="filesShared">Ficheros compartidos</li>
+        <li>
+             <form id="fileInfo">
+                <input type="file" id="fileInput" name="files"/>
+            </form>
+        </li>
+        <li class="user"><a id="download"></a>Fichero 1</li>
+        <li class="user">Fichero 2</li>
+        <li class="user">Fichero 3</li>
+        <li class="user">Fichero 4</li>
+    </div>
+</div>
+<div class="chat">
+    <div id="mensajes">
+    </div>
+    
+    <div class="enviar">
+        <textarea rows="2" cols="70" id="mensajeEnviar" 
+			placeholder="Escribir mensaje"></textarea>
+        <button class="button" id="botonEnviar" onclick="funcionEnviar()" style="vertical-align:middle"><span>Enviar </span></button>
+    </div>    
+</div>
+
+<script src='/socket.io/socket.io.js'></script>
+<script src="js/simpleNodeClient.js"></script>
+    
+</body>
+</html>
